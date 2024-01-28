@@ -45,18 +45,26 @@ function updateRobotDetails() {
     var purchasePrice = document.getElementById('purchasePrice');
     var stationLabel = document.getElementById('stationLabel');
     var stationPrice = document.getElementById('stationPrice');
+    var sp50Options = document.querySelectorAll('.sp50-option');
+    var l50Options = document.querySelectorAll('.l50-option');
 
     if (robotModel === 'SP50') {
         purchasePrice.value = 30000;
         stationLabel.textContent = 'Charging Station/Dock:';
         stationPrice.value = 0;
+        sp50Options.forEach(opt => opt.style.display = 'block');
+        l50Options.forEach(opt => opt.style.display = 'none');
     } else if (robotModel === 'L50') {
         purchasePrice.value = 35000;
         stationLabel.textContent = 'Work Station/Dock:';
         stationPrice.value = 0;
+        sp50Options.forEach(opt => opt.style.display = 'none');
+        l50Options.forEach(opt => opt.style.display = 'block');
     }
+	
     updateStationPrice();
-	updateInvestmentPanel();
+    updateCleaningCoverage();
+    updateInvestmentPanel();
 }
 
 function updateStationPrice() {
