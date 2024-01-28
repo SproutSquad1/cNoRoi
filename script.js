@@ -45,21 +45,26 @@ function updateRobotDetails() {
     var purchasePrice = document.getElementById('purchasePrice');
     var stationLabel = document.getElementById('stationLabel');
     var stationPrice = document.getElementById('stationPrice');
-    var sp50Options = document.querySelectorAll('.sp50-option');
-    var l50Options = document.querySelectorAll('.l50-option');
-
+	var cleaningEquipment = document.getElementById('cleaningEquipment');
+	
     if (robotModel === 'SP50') {
         purchasePrice.value = 30000;
         stationLabel.textContent = 'Charging Station/Dock:';
         stationPrice.value = 0;
-        sp50Options.forEach(opt => opt.style.display = 'block');
-        l50Options.forEach(opt => opt.style.display = 'none');
+        cleaningEquipment.innerHTML = `
+            <option value="3846">20" Upright Vacuum (Corded)</option>
+            <option value="10482">14" Wand Backpack (Battery Powered)</option>
+            <option value="7407">14" Backpack (Corded)</option>
+            <option value="5626">50/50 Combination Upright & Backpack (Corded)</option>`;
     } else if (robotModel === 'L50') {
         purchasePrice.value = 35000;
         stationLabel.textContent = 'Work Station/Dock:';
         stationPrice.value = 0;
-        sp50Options.forEach(opt => opt.style.display = 'none');
-        l50Options.forEach(opt => opt.style.display = 'block');
+        cleaningEquipment.innerHTML = `
+            <option value="15000">20" Walk Behind Auto Scrubber</option>
+            <option value="18000">24" Walk Behind Auto Scrubber</option>
+            <option value="20000">28" Walk Behind Auto Scrubber</option>
+            <option value="28000">32" Ride On Auto Scrubber</option>`;
     }
 	
     updateStationPrice();

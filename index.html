@@ -33,17 +33,7 @@
 
 		<label for="cleaningEquipment">Existing Cleaning Equipment Type:</label>
 		<select id="cleaningEquipment" onchange="updateCleaningCoverage()">
-			<!-- SP50 Options -->
-			<option class="sp50-option" value="3846">20" Upright Vacuum (Corded)</option>
-			<option class="sp50-option" value="10482">14" Wand Backpack (Battery Powered)</option>
-			<option class="sp50-option" value="7407">14" Backpack (Corded)</option>
-			<option class="sp50-option" value="5626">50/50 Combination Upright & Backpack (Corded)</option>
-
-			<!-- L50 Options -->
-			<option class="l50-option" value="15000" style="display:none;">20" Walk Behind Auto Scrubber</option>
-			<option class="l50-option" value="18000" style="display:none;">24" Walk Behind Auto Scrubber</option>
-			<option class="l50-option" value="20000" style="display:none;">28" Walk Behind Auto Scrubber</option>
-			<option class="l50-option" value="28000" style="display:none;">32" Ride On Auto Scrubber</option>
+			<!-- Options will be populated based on the selected robot model -->
 		</select>
 
 		<label for="cleaningCoverage">Labor Cleaning Coverage per Hour (Sq.Ft/hour):</label>
