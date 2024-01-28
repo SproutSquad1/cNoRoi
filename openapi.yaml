@@ -1,0 +1,32 @@
+openapi: 3.0.0
+info:
+  title: ROI Calculator API
+  version: 1.0.0
+paths:
+  /calculateROI:
+    post:
+      summary: Calculate ROI
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                netProfit:
+                  type: number
+                investment:
+                  type: number
+              required:
+                - netProfit
+                - investment
+      responses:
+        '200':
+          description: ROI Calculation Result
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  roi:
+                    type: number
