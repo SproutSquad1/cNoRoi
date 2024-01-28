@@ -82,19 +82,6 @@ function updateStationPrice() {
 }
 
 function updateInvestmentPanel() {
-    var purchasePrice = parseFloat(document.getElementById('purchasePrice').value);
-    var stationPrice = parseFloat(document.getElementById('stationPrice').value);
-    var installationCost = parseFloat(document.getElementById('installationCost').value);
-    var trainingCost = parseFloat(document.getElementById('trainingCost').value);
-    var miscCost = parseFloat(document.getElementById('miscCost').value);
-
-    var totalEquipmentCost = purchasePrice + stationPrice;
-    document.getElementById('totalEquipmentCost').textContent = totalEquipmentCost.toFixed(2);
-
-    // You can also calculate and display other totals here if needed
-}
-
-function updateInvestmentPanel() {
 	var totalSquareFootage = parseFloat(document.getElementById('totalSquareFootage').value);
     var purchasePrice = parseFloat(document.getElementById('purchasePrice').value);
     var stationPrice = parseFloat(document.getElementById('stationPrice').value);
