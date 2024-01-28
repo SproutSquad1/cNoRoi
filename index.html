@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROI Calculator</title>
+    <title>SP50 ROI Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator">
-        <h2>ROI Calculator</h2>
-        <label for="netProfit">Net Profit ($):</label>
-        <input type="number" id="netProfit" placeholder="Enter Net Profit">
+    <div id="roi-calculator">
+        <h2>SP50 ROI Calculator</h2>
 
-        <label for="investment">Cost of Investment ($):</label>
-        <input type="number" id="investment" placeholder="Enter Investment Cost">
+        <label for="totalSquareFootage">Total Square Footage to be Cleaned:</label>
+        <input type="number" id="totalSquareFootage" placeholder="Enter total square footage">
+
+        <label for="cleaningEquipment">Cleaning Equipment Type:</label>
+        <select id="cleaningEquipment">
+            <option value="3846">20" Up Right Vacuum - Corded (3,846 sq.ft/hour)</option>
+            <option value="10482">14" Wand Backpack - Battery Powered (10,482 sq.ft/hour)</option>
+            <option value="7407">14" Backpack - Corded (7,407 sq.ft/hour)</option>
+            <option value="5626" selected>50/50 Combination Upright & Backpack - Corded (5,626 sq.ft/hour)</option>
+        </select>
+
+        <label for="hourlyLaborCost">Hourly Labor Cost ($):</label>
+        <input type="number" id="hourlyLaborCost" value="15.35" placeholder="Enter hourly labor cost">
+
+        <label for="laborBurden">Labor Burden (%):</label>
+        <input type="number" id="laborBurden" value="30" placeholder="Enter labor burden percentage">
+
+        <label for="purchasePrice">Purchase Price ($):</label>
+        <input type="number" id="purchasePrice" placeholder="Enter purchase price">
+
+        <label for="installationCosts">Installation and Integration Costs ($):</label>
+        <input type="number" id="installationCosts" placeholder="Enter installation costs">
+
+        <label for="trainingCosts">Training Costs ($):</label>
+        <input type="number" id="trainingCosts" placeholder="Enter training costs">
+
+        <label for="newLaborCost">New Annual Labor Cost with Robot ($):</label>
+        <input type="number" id="newLaborCost" placeholder="Enter new labor cost with robot">
 
         <button onclick="calculateROI()">Calculate ROI</button>
 
-        <div id="result"></div>
+        <p id="result"></p>
     </div>
 
     <script src="script.js"></script>
