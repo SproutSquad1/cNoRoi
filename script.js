@@ -56,6 +56,7 @@ function updateRobotDetails() {
         stationPrice.value = 0;
     }
     updateStationPrice();
+	updateInvestmentPanel();
 }
 
 function updateStationPrice() {
@@ -68,6 +69,21 @@ function updateStationPrice() {
     } else {
         stationPrice.value = 0;
     }
+	
+	updateInvestmentPanel();
+}
+
+function updateInvestmentPanel() {
+    var purchasePrice = parseFloat(document.getElementById('purchasePrice').value);
+    var stationPrice = parseFloat(document.getElementById('stationPrice').value);
+    var installationCost = parseFloat(document.getElementById('installationCost').value);
+    var trainingCost = parseFloat(document.getElementById('trainingCost').value);
+    var miscCost = parseFloat(document.getElementById('miscCost').value);
+
+    var totalEquipmentCost = purchasePrice + stationPrice;
+    document.getElementById('totalEquipmentCost').textContent = totalEquipmentCost.toFixed(2);
+
+    // You can also calculate and display other totals here if needed
 }
 
 // Attach the calculateROI function to the window object to make it accessible globally
@@ -80,4 +96,5 @@ window.updateStationPrice = updateStationPrice;
 window.onload = function() {
     updateRobotDetails();
     updateStationPrice();
+	updateInvestmentPanel();
 };

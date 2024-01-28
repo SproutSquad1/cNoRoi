@@ -61,6 +61,15 @@
         <p id="result"></p>
     </div>
 
+	<!-- New Read-Only Panel -->
+	<div id="investment-panel">
+		<h3>Total Investment</h3>
+		<p><strong>Total Equipment Cost ($):</strong> <span id="totalEquipmentCost">0</span></p>
+		<p><strong>Installation Cost ($):</strong> <input type="number" id="installationCost" value="500" oninput="updateInvestmentPanel()"></p>
+		<p><strong>Training Cost ($):</strong> <input type="number" id="trainingCost" value="100" oninput="updateInvestmentPanel()"></p>
+		<p><strong>Misc. Cost ($):</strong> <input type="number" id="miscCost" value="0" oninput="updateInvestmentPanel()"></p>
+	</div>
+
     <script src="script.js"></script>
 </body>
 </html>
