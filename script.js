@@ -109,7 +109,7 @@ function updateRobotDetails() {
     }
 	
 	document.getElementById('annualOperationalCost').innerHTML = operationalCostContent;
-	document.getElementById('annualOperationalCost').innerHTML = operationalCostContent;
+    document.getElementById('totalOperationalCost').textContent = 'Total Annual Operational Cost = ' + totalOperationalCost.toFixed(2);
 	
     updateStationPrice();
     updateCleaningCoverage();
