@@ -46,6 +46,8 @@ function updateRobotDetails() {
     var stationLabel = document.getElementById('stationLabel');
     var stationPrice = document.getElementById('stationPrice');
 	var cleaningEquipment = document.getElementById('cleaningEquipment');
+	var totalOperationalCost = 0;
+    var operationalCostContent = '';
 	
     if (robotModel === 'SP50') {
         purchasePrice.value = 30000;
@@ -56,6 +58,18 @@ function updateRobotDetails() {
             <option value="10482">14" Wand Backpack (Battery Powered)</option>
             <option value="7407">14" Backpack (Corded)</option>
             <option value="5626">50/50 Combination Upright & Backpack (Corded)</option>`;
+		operationalCostContent = `
+            <p><strong>Maintenance Costs:</strong></p>
+            <ul>
+                <li>Roller Brush Synchronous belt (every 12 months) $76.7</li>
+                <li>Baffle Synchronous belt (every 12 months) $28.5</li>
+                <li>Installation service cost (every 12 months) $500</li>
+                <li><strong>Total annual maintenance cost = $605.2</strong></li>
+            </ul>
+            <!-- ... [rest of SP50 operational costs] ... -->
+        `;	
+		totalOperationalCost = 605.2 + 28.5 + 500 + 113.82 + 792.9 + 100; // Sum of SP50 costs
+		
     } else if (robotModel === 'L50') {
         purchasePrice.value = 35000;
         stationLabel.textContent = 'Work Station/Dock:';
@@ -65,7 +79,18 @@ function updateRobotDetails() {
             <option value="18000">24" Walk Behind Auto Scrubber</option>
             <option value="20000">28" Walk Behind Auto Scrubber</option>
             <option value="28000">32" Ride On Auto Scrubber</option>`;
+		operationalCostContent = `
+            <p><strong>Maintenance Costs:</strong></p>
+            <ul>
+                <li>Debris filter bag (every 12 months) $13.5</li>
+                <!-- ... [rest of L50 operational costs] ... -->
+            </ul>
+        `;
+		totalOperationalCost = 13.5 + 113.82 + 1341.1; // Sum of L50 costs
     }
+	
+	document.getElementById('annualOperationalCost').innerHTML = operationalCostContent;
+	document.getElementById('annualOperationalCost').innerHTML = operationalCostContent;
 	
     updateStationPrice();
     updateCleaningCoverage();
