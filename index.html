@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <h2>ROI Calculator</h2>
+        <label for="netProfit">Net Profit ($):</label>
+        <input type="number" id="netProfit" placeholder="Enter Net Profit">
+
+        <label for="investment">Cost of Investment ($):</label>
+        <input type="number" id="investment" placeholder="Enter Investment Cost">
+
+        <button onclick="calculateROI()">Calculate ROI</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
