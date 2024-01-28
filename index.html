@@ -7,8 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 	<div id="roi-calculator">
-		<h2>SP50 ROI Calculator</h2>
+		<h2>Cleaning Robot ROI Calculator</h2>
 
+		<label for="robotModel">Robot Model:</label>
+		<select id="robotModel" onchange="updateRobotDetails()">
+			<option value="SP50">SP50 Vacuum Sweeper</option>
+			<option value="L50">L50 Scrubber</option>
+		</select>
+
+		<label for="purchasePrice">Purchase Price ($):</label>
+		<input type="number" id="purchasePrice" value="30000" readonly>
+
+		<label id="stationLabel">Charging Station/Dock:</label>
+		<select id="stationOption" onchange="updateStationPrice()">
+			<option value="no">No</option>
+			<option value="yes">Yes</option>
+		</select>
+
+		<label for="stationPrice">Station Price ($):</label>
+		<input type="number" id="stationPrice" value="0" readonly>
+
+        <label for="installationCosts">Installation and Integration Costs ($):</label>
+        <input type="number" id="installationCosts" placeholder="Enter installation costs">
+
+        <label for="trainingCosts">Training Costs ($):</label>
+        <input type="number" id="trainingCosts" placeholder="Enter training costs">
+		
 		<label for="totalSquareFootage">Total Square Footage to be Cleaned (Sq.Ft):</label>
 		<input type="number" id="totalSquareFootage" value="40000" placeholder="Enter total square footage">
 
@@ -28,15 +52,6 @@
 
         <label for="laborBurden">Labor Burden (%):</label>
         <input type="number" id="laborBurden" value="30" placeholder="Enter labor burden percentage">
-
-        <label for="purchasePrice">Purchase Price ($):</label>
-        <input type="number" id="purchasePrice" placeholder="Enter purchase price">
-
-        <label for="installationCosts">Installation and Integration Costs ($):</label>
-        <input type="number" id="installationCosts" placeholder="Enter installation costs">
-
-        <label for="trainingCosts">Training Costs ($):</label>
-        <input type="number" id="trainingCosts" placeholder="Enter training costs">
 
         <label for="newLaborCost">New Annual Labor Cost with Robot ($):</label>
         <input type="number" id="newLaborCost" placeholder="Enter new labor cost with robot">

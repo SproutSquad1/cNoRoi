@@ -40,6 +40,44 @@ function updateCleaningCoverage() {
     cleaningCoverage.value = cleaningEquipment.value;
 }
 
+function updateRobotDetails() {
+    var robotModel = document.getElementById('robotModel').value;
+    var purchasePrice = document.getElementById('purchasePrice');
+    var stationLabel = document.getElementById('stationLabel');
+    var stationPrice = document.getElementById('stationPrice');
+
+    if (robotModel === 'SP50') {
+        purchasePrice.value = 30000;
+        stationLabel.textContent = 'Charging Station/Dock:';
+        stationPrice.value = 0;
+    } else if (robotModel === 'L50') {
+        purchasePrice.value = 35000;
+        stationLabel.textContent = 'Work Station/Dock:';
+        stationPrice.value = 0;
+    }
+    updateStationPrice();
+}
+
+function updateStationPrice() {
+    var robotModel = document.getElementById('robotModel').value;
+    var stationOption = document.getElementById('stationOption').value;
+    var stationPrice = document.getElementById('stationPrice');
+
+    if (stationOption === 'yes') {
+        stationPrice.value = (robotModel === 'SP50') ? 3300 : 5000;
+    } else {
+        stationPrice.value = 0;
+    }
+}
+
 // Attach the calculateROI function to the window object to make it accessible globally
 window.calculateROI = calculateROI;
 window.updateCleaningCoverage = updateCleaningCoverage;
+window.updateRobotDetails = updateRobotDetails;
+window.updateStationPrice = updateStationPrice;
+
+// Initialize with default values
+window.onload = function() {
+    updateRobotDetails();
+    updateStationPrice();
+};
