@@ -1,6 +1,7 @@
 function calculateROI() {
     var totalSquareFootage = parseFloat(document.getElementById('totalSquareFootage').value);
-    var cleaningEquipment = parseFloat(document.getElementById('cleaningEquipment').value);
+    var cleaningCoverage = parseFloat(document.getElementById('cleaningCoverage').value);
+	var hoursToClean = totalSquareFootage / cleaningCoverage;
     var hourlyLaborCost = parseFloat(document.getElementById('hourlyLaborCost').value);
     var laborBurden = parseFloat(document.getElementById('laborBurden').value) / 100;
     var purchasePrice = parseFloat(document.getElementById('purchasePrice').value);
@@ -33,5 +34,12 @@ function calculateROI() {
     }
 }
 
+function updateCleaningCoverage() {
+    var cleaningEquipment = document.getElementById('cleaningEquipment');
+    var cleaningCoverage = document.getElementById('cleaningCoverage');
+    cleaningCoverage.value = cleaningEquipment.value;
+}
+
 // Attach the calculateROI function to the window object to make it accessible globally
 window.calculateROI = calculateROI;
+window.updateCleaningCoverage = updateCleaningCoverage;

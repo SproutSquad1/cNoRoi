@@ -6,20 +6,22 @@
     <title>SP50 ROI Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div id="roi-calculator">
-        <h2>SP50 ROI Calculator</h2>
+	<div id="roi-calculator">
+		<h2>SP50 ROI Calculator</h2>
 
-        <label for="totalSquareFootage">Total Square Footage to be Cleaned:</label>
-        <input type="number" id="totalSquareFootage" placeholder="Enter total square footage">
+		<label for="totalSquareFootage">Total Square Footage to be Cleaned (Sq.Ft):</label>
+		<input type="number" id="totalSquareFootage" value="40000" placeholder="Enter total square footage">
 
-        <label for="cleaningEquipment">Cleaning Equipment Type:</label>
-        <select id="cleaningEquipment">
-            <option value="3846">20" Up Right Vacuum - Corded (3,846 sq.ft/hour)</option>
-            <option value="10482">14" Wand Backpack - Battery Powered (10,482 sq.ft/hour)</option>
-            <option value="7407">14" Backpack - Corded (7,407 sq.ft/hour)</option>
-            <option value="5626" selected>50/50 Combination Upright & Backpack - Corded (5,626 sq.ft/hour)</option>
-        </select>
+		<label for="cleaningEquipment">Cleaning Equipment Type:</label>
+		<select id="cleaningEquipment" onchange="updateCleaningCoverage()">
+			<option value="3846">20" Upright Vacuum (Corded)</option>
+			<option value="10482">14" Wand Backpack (Battery Powered)</option>
+			<option value="7407">14" Backpack (Corded)</option>
+			<option value="5626">50/50 Combination Upright & Backpack (Corded)</option>
+		</select>
+
+		<label for="cleaningCoverage">Labor Cleaning Coverage per Hour (Sq.Ft/hour):</label>
+		<input type="number" id="cleaningCoverage" value="3846" readonly>
 
         <label for="hourlyLaborCost">Hourly Labor Cost ($):</label>
         <input type="number" id="hourlyLaborCost" value="15.35" placeholder="Enter hourly labor cost">
