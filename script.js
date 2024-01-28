@@ -86,6 +86,25 @@ function updateInvestmentPanel() {
     // You can also calculate and display other totals here if needed
 }
 
+function updateInvestmentPanel() {
+	var totalSquareFootage = parseFloat(document.getElementById('totalSquareFootage').value);
+    var purchasePrice = parseFloat(document.getElementById('purchasePrice').value);
+    var stationPrice = parseFloat(document.getElementById('stationPrice').value);
+
+    var totalEquipmentCost = purchasePrice + stationPrice;
+    document.getElementById('totalEquipmentCost').textContent = totalEquipmentCost.toFixed(2);
+
+    // Calculate installation cost: $500 for every 30,000 sq.ft
+    var installationCost = Math.ceil(totalSquareFootage / 30000) * 500;
+    document.getElementById('installationCost').value = installationCost;
+    
+	var trainingCost = parseFloat(document.getElementById('trainingCost').value);
+    var miscCost = parseFloat(document.getElementById('miscCost').value);
+	
+    var totalInvestment = totalEquipmentCost + installationCost + trainingCost + miscCost;
+    document.getElementById('totalInvestment').textContent = 'Total Investment = ' + totalInvestment.toFixed(2);
+}
+
 // Attach the calculateROI function to the window object to make it accessible globally
 window.calculateROI = calculateROI;
 window.updateCleaningCoverage = updateCleaningCoverage;

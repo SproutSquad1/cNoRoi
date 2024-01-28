@@ -27,21 +27,23 @@
 		<label for="stationPrice">Station Price ($):</label>
 		<input type="number" id="stationPrice" value="0" readonly>
 
-        <label for="installationCosts">Installation and Integration Costs ($):</label>
-        <input type="number" id="installationCosts" placeholder="Enter installation costs">
-
-        <label for="trainingCosts">Training Costs ($):</label>
-        <input type="number" id="trainingCosts" placeholder="Enter training costs">
 		
 		<label for="totalSquareFootage">Total Square Footage to be Cleaned (Sq.Ft):</label>
 		<input type="number" id="totalSquareFootage" value="40000" placeholder="Enter total square footage">
 
-		<label for="cleaningEquipment">Cleaning Equipment Type:</label>
+		<label for="cleaningEquipment">Existing Cleaning Equipment Type:</label>
 		<select id="cleaningEquipment" onchange="updateCleaningCoverage()">
-			<option value="3846">20" Upright Vacuum (Corded)</option>
-			<option value="10482">14" Wand Backpack (Battery Powered)</option>
-			<option value="7407">14" Backpack (Corded)</option>
-			<option value="5626">50/50 Combination Upright & Backpack (Corded)</option>
+			<!-- SP50 Options -->
+			<option class="sp50-option" value="3846">20" Upright Vacuum (Corded)</option>
+			<option class="sp50-option" value="10482">14" Wand Backpack (Battery Powered)</option>
+			<option class="sp50-option" value="7407">14" Backpack (Corded)</option>
+			<option class="sp50-option" value="5626">50/50 Combination Upright & Backpack (Corded)</option>
+
+			<!-- L50 Options -->
+			<option class="l50-option" value="15000" style="display:none;">20" Walk Behind Auto Scrubber</option>
+			<option class="l50-option" value="18000" style="display:none;">24" Walk Behind Auto Scrubber</option>
+			<option class="l50-option" value="20000" style="display:none;">28" Walk Behind Auto Scrubber</option>
+			<option class="l50-option" value="28000" style="display:none;">32" Ride On Auto Scrubber</option>
 		</select>
 
 		<label for="cleaningCoverage">Labor Cleaning Coverage per Hour (Sq.Ft/hour):</label>
@@ -61,13 +63,13 @@
         <p id="result"></p>
     </div>
 
-	<!-- New Read-Only Panel -->
 	<div id="investment-panel">
 		<h3>Total Investment</h3>
 		<p><strong>Total Equipment Cost ($):</strong> <span id="totalEquipmentCost">0</span></p>
 		<p><strong>Installation Cost ($):</strong> <input type="number" id="installationCost" value="500" oninput="updateInvestmentPanel()"></p>
 		<p><strong>Training Cost ($):</strong> <input type="number" id="trainingCost" value="100" oninput="updateInvestmentPanel()"></p>
 		<p><strong>Misc. Cost ($):</strong> <input type="number" id="miscCost" value="0" oninput="updateInvestmentPanel()"></p>
+		<p><strong>Total Investment ($):</strong> <span id="totalInvestment">Total Investment = 0</span></p>
 	</div>
 
     <script src="script.js"></script>
