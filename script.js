@@ -53,12 +53,7 @@ function updateRobotDetails() {
         purchasePrice.value = 30000;
         stationLabel.textContent = 'Charging Station/Dock:';
         stationPrice.value = 0;
-        cleaningEquipment.innerHTML = `
-            <option value="3846">20" Upright Vacuum (Corded)</option>
-            <option value="10482">14" Wand Backpack (Battery Powered)</option>
-            <option value="7407">14" Backpack (Corded)</option>
-            <option value="5626">50/50 Combination Upright & Backpack (Corded)</option>`;
-		operationalCostContent = `
+       operationalCostContent = `
             <p><strong>Maintenance Costs:</strong></p>
             <ul>
                 <li>Roller Brush Synchronous belt (every 12 months) $76.7</li>
@@ -66,8 +61,20 @@ function updateRobotDetails() {
                 <li>Installation service cost (every 12 months) $500</li>
                 <li><strong>Total annual maintenance cost = $605.2</strong></li>
             </ul>
-            <!-- ... [rest of SP50 operational costs] ... -->
-        `;	
+            <p><strong>Electricity Costs:</strong></p>
+            <ul>
+                <li>2.88 kWh per charge at $0.152/kWh = $0.43776 per charge</li>
+                <li><strong>Total Annual cost (5 x 52 weeks) x $0.43776 = $113.82</strong></li>
+            </ul>
+            <p><strong>Replacement Parts or Supplies:</strong></p>
+            <ul>
+                <li>Dust filter (Monthly) $7.4 ($88.8 annually)</li>
+                <li>Roller Brush (every 3 months) $121.1 ($109.1 annually)</li>
+                <li>2 Side brush (every 3 months) $134 ($536 annually)</li>
+                <li>HEPA filter (every 12 months) $59</li>
+                <li><strong>Total cost annually = $792.9 + $100 (est. shipping) = $892.9</strong></li>
+            </ul>
+        `;
 		totalOperationalCost = 605.2 + 28.5 + 500 + 113.82 + 792.9 + 100; // Sum of SP50 costs
 		
     } else if (robotModel === 'L50') {
@@ -79,11 +86,23 @@ function updateRobotDetails() {
             <option value="18000">24" Walk Behind Auto Scrubber</option>
             <option value="20000">28" Walk Behind Auto Scrubber</option>
             <option value="28000">32" Ride On Auto Scrubber</option>`;
-		operationalCostContent = `
+        operationalCostContent = `
             <p><strong>Maintenance Costs:</strong></p>
             <ul>
                 <li>Debris filter bag (every 12 months) $13.5</li>
-                <!-- ... [rest of L50 operational costs] ... -->
+            </ul>
+            <p><strong>Electricity Costs:</strong></p>
+            <ul>
+                <li>2.88 kWh per charge at $0.152/kWh = $0.43776 per charge</li>
+                <li><strong>Total Annual cost (5 x 52 weeks) x $0.43776 = $113.82</strong></li>
+            </ul>
+            <p><strong>Consumables Replacement Parts or Supplies:</strong></p>
+            <ul>
+                <li>Front Squeegee blade (every 3 months) $47.7 ($190.80 annually)</li>
+                <li>Rear Squeegee blade (every 3 months) $33.6 ($134.4 annually)</li>
+                <li>2 x Disk Brush (every 4 months) $138.5/each ($831 annually)</li>
+                <li>Side skirt blade (every 4 months) $28.3 ($84.9 annually)</li>
+                <li><strong>Total annual cost = $1241.1 + $100 (est. shipping) = $1341.1</strong></li>
             </ul>
         `;
 		totalOperationalCost = 13.5 + 113.82 + 1341.1; // Sum of L50 costs
