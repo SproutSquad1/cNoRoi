@@ -53,7 +53,12 @@ function updateRobotDetails() {
         purchasePrice.value = 30000;
         stationLabel.textContent = 'Charging Station/Dock:';
         stationPrice.value = 0;
-       operationalCostContent = `
+        cleaningEquipment.innerHTML = `
+            <option value="3846">20" Upright Vacuum (Corded)</option>
+            <option value="10482">14" Wand Backpack (Battery Powered)</option>
+            <option value="7407">14" Backpack (Corded)</option>
+            <option value="5626">50/50 Combination Upright & Backpack (Corded)</option>`;
+		operationalCostContent = `
             <p><strong>Maintenance Costs:</strong></p>
             <ul>
                 <li>Roller Brush Synchronous belt (every 12 months) $76.7</li>
